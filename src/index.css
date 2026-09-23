@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-display: 'Outfit', system-ui, sans-serif;
+    --brand-red: #c51e28;
+    --brand-red-hover: #b01821;
+    --brand-dark: #0b0f17;
+    --brand-surface: #111726;
+    --brand-card: #151d30;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.solar-glow {
+  box-shadow: 0 0 50px -12px rgba(197, 30, 40, 0.25);
+}
+
+.solar-border-glow:hover {
+  border-color: rgba(197, 30, 40, 0.5);
+  box-shadow: 0 0 30px -8px rgba(197, 30, 40, 0.3);
+}
+
+.futuristic-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.sun-ray-radial {
+  background: radial-gradient(circle at 50% 0%, rgba(197, 30, 40, 0.15) 0%, rgba(11, 15, 23, 0) 70%);
+}
