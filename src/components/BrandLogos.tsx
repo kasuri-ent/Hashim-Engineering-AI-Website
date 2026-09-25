@@ -331,11 +331,11 @@ export const SOLAR_BRANDS: Record<SolarBrandId, BrandMeta> = {
     batteryType: 'lithium',
     tier: 'Global No. 1 EV & Blade / Battery-Box Premium',
     country: 'Global',
-    logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/BYD_Company%2C_Ltd._-_Logo.svg/1280px-BYD_Company%2C_Ltd._-_Logo.svg.png',
+    logoUrl: 'https://storagesummit.solarenergyevents.com/wp-content/uploads/sites/3/2023/07/BYD-logo_1.png',
     brandColor: '#C8102E',
     renderLogo: (className = 'h-9') => (
       <BrandImageLogo
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/BYD_Company%2C_Ltd._-_Logo.svg/1280px-BYD_Company%2C_Ltd._-_Logo.svg.png"
+        src="https://storagesummit.solarenergyevents.com/wp-content/uploads/sites/3/2023/07/BYD-logo_1.png"
         alt="BYD Energy Storage Logo"
         name="BYD"
         subtitle="Battery-Box Premium"
@@ -389,17 +389,17 @@ export const SOLAR_BRANDS: Record<SolarBrandId, BrandMeta> = {
 
   hithium: {
     id: 'hithium',
-    name: 'HiTHIUM Energy Storage',
+    name: 'HiTHIUM Energy',
     category: 'batteries',
     batteryType: 'lithium',
     tier: 'Specialized Utility & C&I BESS Cell Manufacturer',
     country: 'Global',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ZcIu6mP8x-7Hj6C2n-6VlHhW0tXjLg7eEg&s=10',
+    logoUrl: 'https://storagesummit.solarenergyevents.com/wp-content/uploads/sites/3/2023/02/Hithium-logo_-vertical_1-3-e1733158543208.png',
     brandColor: '#00A3E0',
     renderLogo: (className = 'h-9') => (
       <BrandImageLogo
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ZcIu6mP8x-7Hj6C2n-6VlHhW0tXjLg7eEg&s=10"
-        alt="HiTHIUM Energy Storage Logo"
+        src="https://storagesummit.solarenergyevents.com/wp-content/uploads/sites/3/2023/02/Hithium-logo_-vertical_1-3-e1733158543208.png"
+        alt="HiTHIUM Energy Logo"
         name="HiTHIUM"
         subtitle="BESS Lithium Cells"
         brandColor="#00A3E0"
@@ -415,11 +415,11 @@ export const SOLAR_BRANDS: Record<SolarBrandId, BrandMeta> = {
     batteryType: 'lithium',
     tier: 'Global Leader in High-Voltage & All-in-One ESS',
     country: 'Global',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnQ1Yg2eUqA3lJ9vH8yC9gZ8Qp8KxP5e3q2w&s=10',
+    logoUrl: 'https://en.fox-ess.com/wp-content/uploads/2025/08/logo-new.png',
     brandColor: '#7B2CBF',
     renderLogo: (className = 'h-9') => (
       <BrandImageLogo
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnQ1Yg2eUqA3lJ9vH8yC9gZ8Qp8KxP5e3q2w&s=10"
+        src="https://en.fox-ess.com/wp-content/uploads/2025/08/logo-new.png"
         alt="FoxESS Storage Logo"
         name="FoxESS"
         subtitle="High-Voltage ESS"
@@ -436,11 +436,11 @@ export const SOLAR_BRANDS: Record<SolarBrandId, BrandMeta> = {
     batteryType: 'lithium',
     tier: 'Premium Residential & Commercial HV Battery Banks',
     country: 'Global',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH7gT7iJ4M9Zz-a5VqR3bM7sA5P3T0GzUv9g&s=10',
+    logoUrl: 'https://www.photovoltaikshop.eu/media/image/opc/xl/soluna.gif',
     brandColor: '#F58220',
     renderLogo: (className = 'h-9') => (
       <BrandImageLogo
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH7gT7iJ4M9Zz-a5VqR3bM7sA5P3T0GzUv9g&s=10"
+        src="https://www.photovoltaikshop.eu/media/image/opc/xl/soluna.gif"
         alt="Soluna Lithium Logo"
         name="Soluna"
         subtitle="HV Lithium Storage"
@@ -457,11 +457,11 @@ export const SOLAR_BRANDS: Record<SolarBrandId, BrandMeta> = {
     batteryType: 'lithium',
     tier: 'World Benchmark Telecom & Grid Lithium LiFePO4',
     country: 'Global',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7o5kU8vG6L3mN7hP6b-1VjQ8Z4Xg2R1yP5Q&s=10',
+    logoUrl: 'https://storagesummit.solarenergyevents.com/wp-content/uploads/sites/3/2024/11/%E8%8B%B1%E6%96%87-%E7%AB%96-1140x614.png',
     brandColor: '#E60000',
     renderLogo: (className = 'h-9') => (
       <BrandImageLogo
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7o5kU8vG6L3mN7hP6b-1VjQ8Z4Xg2R1yP5Q&s=10"
+        src="https://storagesummit.solarenergyevents.com/wp-content/uploads/sites/3/2024/11/%E8%8B%B1%E6%96%87-%E7%AB%96-1140x614.png"
         alt="Narada Lithium Logo"
         name="Narada LFP"
         subtitle="Lithium Telecom/ESS"
@@ -478,11 +478,11 @@ export const SOLAR_BRANDS: Record<SolarBrandId, BrandMeta> = {
     batteryType: 'lithium',
     tier: 'Leading Pakistani Solar Brand / Lithium PowerWall',
     country: 'Pakistan',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6Z4hH5J7fL2uM9vO4qW3nK1e8Y7zP5x9Q3w&s=10',
+    logoUrl: 'https://electricmarket.pk/wp-content/uploads/2025/08/Inverex-scaled.webp',
     brandColor: '#008080',
     renderLogo: (className = 'h-9') => (
       <BrandImageLogo
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6Z4hH5J7fL2uM9vO4qW3nK1e8Y7zP5x9Q3w&s=10"
+        src="https://electricmarket.pk/wp-content/uploads/2025/08/Inverex-scaled.webp"
         alt="Inverex Solar Logo"
         name="Inverex"
         subtitle="Lithium PowerWall"
@@ -499,11 +499,11 @@ export const SOLAR_BRANDS: Record<SolarBrandId, BrandMeta> = {
     batteryType: 'lithium',
     tier: 'Trusted Solar Brand / Smart LiFePO4 Rack Units',
     country: 'Pakistan',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkM9pU7fT5bV2nJ6xK8wA4mO7eR1zP3X5Q8g&s=10',
+    logoUrl: 'https://solarmax.pk/logo.png',
     brandColor: '#F39200',
     renderLogo: (className = 'h-9') => (
       <BrandImageLogo
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkM9pU7fT5bV2nJ6xK8wA4mO7eR1zP3X5Q8g&s=10"
+        src="https://solarmax.pk/logo.png"
         alt="SolarMax Logo"
         name="SolarMax"
         subtitle="Lithium Battery"
@@ -520,11 +520,11 @@ export const SOLAR_BRANDS: Record<SolarBrandId, BrandMeta> = {
     batteryType: 'lithium',
     tier: 'High-Performance LiFePO4 Solar Battery Modules',
     country: 'Pakistan',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8jZ5qT1mP7bX3vK6nO9wA4mY7eR1zP3X5Q8g&s=10',
+    logoUrl: 'https://knoxfzco.com/wp-content/uploads/2024/07/WhatsApp-Image-2023-11-20-at-3.09.48-PM-1024x288.jpeg',
     brandColor: '#002B49',
     renderLogo: (className = 'h-9') => (
       <BrandImageLogo
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8jZ5qT1mP7bX3vK6nO9wA4mY7eR1zP3X5Q8g&s=10"
+        src="https://knoxfzco.com/wp-content/uploads/2024/07/WhatsApp-Image-2023-11-20-at-3.09.48-PM-1024x288.jpeg"
         alt="Knox Solar Logo"
         name="Knox"
         subtitle="LiFePO4 Storage"
@@ -542,11 +542,11 @@ export const SOLAR_BRANDS: Record<SolarBrandId, BrandMeta> = {
     batteryType: 'tubular',
     tier: 'Pakistan Premier Deep-Cycle & Solar Tubular Battery',
     country: 'Pakistan',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5V7hY6wT3bK1nJ8mP4vO7eR1zP3X5Q8g2w&s=10',
+    logoUrl: 'https://www.osaka.com.pk/wp-content/uploads/2021/01/Osaka-Batteries-logo.png',
     brandColor: '#E30613',
     renderLogo: (className = 'h-9') => (
       <BrandImageLogo
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5V7hY6wT3bK1nJ8mP4vO7eR1zP3X5Q8g2w&s=10"
+        src="https://www.osaka.com.pk/wp-content/uploads/2021/01/Osaka-Batteries-logo.png"
         alt="Osaka Battery Logo"
         name="Osaka"
         subtitle="Solar Tubular Deep-Cycle"
@@ -563,11 +563,11 @@ export const SOLAR_BRANDS: Record<SolarBrandId, BrandMeta> = {
     batteryType: 'tubular',
     tier: 'High-Demand Deep-Cycle Tubular (TX / UTL Series)',
     country: 'Pakistan',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9zY7wK5mP3bV1nJ8mP4vO7eR1zP3X5Q8g2w&s=10',
+    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTmw1aCGjNdh2KFinyJSBllXH-ToQ6lY6Ys8sPEQduzPhgmCdWQkWIC8zr&s=10',
     brandColor: '#E52421',
     renderLogo: (className = 'h-9') => (
       <BrandImageLogo
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9zY7wK5mP3bV1nJ8mP4vO7eR1zP3X5Q8g2w&s=10"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTmw1aCGjNdh2KFinyJSBllXH-ToQ6lY6Ys8sPEQduzPhgmCdWQkWIC8zr&s=10"
         alt="Phoenix Battery Logo"
         name="Phoenix"
         subtitle="Deep-Cycle Tubular"
@@ -605,11 +605,11 @@ export const SOLAR_BRANDS: Record<SolarBrandId, BrandMeta> = {
     batteryType: 'tubular',
     tier: 'Global Industrial & Pakistan Solar Tubular Leader',
     country: 'Pakistan / Global',
-    logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Exide_Technologies_logo.svg/1280px-Exide_Technologies_logo.svg.png',
+    logoUrl: 'https://www.exidepakistan.com/cdn/shop/files/Exide_logo_for_web_f40eade0-a32a-49e9-8052-e0570edd6c23.png?v=1640615101',
     brandColor: '#ED1C24',
     renderLogo: (className = 'h-9') => (
       <BrandImageLogo
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Exide_Technologies_logo.svg/1280px-Exide_Technologies_logo.svg.png"
+        src="https://www.exidepakistan.com/cdn/shop/files/Exide_logo_for_web_f40eade0-a32a-49e9-8052-e0570edd6c23.png?v=1640615101"
         alt="Exide Technologies Logo"
         name="Exide"
         subtitle="Solar Tubular Series"
@@ -647,11 +647,11 @@ export const SOLAR_BRANDS: Record<SolarBrandId, BrandMeta> = {
     batteryType: 'tubular',
     tier: 'Deep-Cycle Lead Carbon & Tubular OPzS/OPzV',
     country: 'Global',
-    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7o5kU8vG6L3mN7hP6b-1VjQ8Z4Xg2R1yP5Q&s=10',
+    logoUrl: 'https://storagesummit.solarenergyevents.com/wp-content/uploads/sites/3/2024/11/%E8%8B%B1%E6%96%87-%E7%AB%96-1140x614.png',
     brandColor: '#E60000',
     renderLogo: (className = 'h-9') => (
       <BrandImageLogo
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7o5kU8vG6L3mN7hP6b-1VjQ8Z4Xg2R1yP5Q&s=10"
+        src="https://storagesummit.solarenergyevents.com/wp-content/uploads/sites/3/2024/11/%E8%8B%B1%E6%96%87-%E7%AB%96-1140x614.png"
         alt="Narada Tubular Logo"
         name="Narada Tubular"
         subtitle="Lead Carbon & OPzV"
@@ -818,6 +818,49 @@ export interface BrandBadgeProps {
   className?: string;
 }
 
+export const SafeBrandImg: React.FC<{
+  src: string;
+  alt: string;
+  name: string;
+  brandColor?: string;
+  className?: string;
+  maxHeightClass?: string;
+}> = ({
+  src,
+  alt,
+  name,
+  brandColor = '#c51e28',
+  className = '',
+  maxHeightClass = 'max-h-16',
+}) => {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return (
+      <div className="flex flex-col items-center justify-center text-center p-1 w-full h-full">
+        <span
+          className="w-2.5 h-2.5 rounded-full mb-1"
+          style={{ backgroundColor: brandColor }}
+        />
+        <span className="text-[10px] sm:text-[11px] font-black text-slate-800 tracking-tight uppercase leading-tight line-clamp-2">
+          {name}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      referrerPolicy="no-referrer"
+      loading="lazy"
+      onError={() => setHasError(true)}
+      className={`h-full w-full ${maxHeightClass} object-contain transform scale-105 group-hover:scale-110 transition-transform duration-300 ${className}`}
+    />
+  );
+};
+
 export const BrandBadge: React.FC<BrandBadgeProps> = ({
   brandId,
   showDetails = false,
@@ -832,15 +875,12 @@ export const BrandBadge: React.FC<BrandBadgeProps> = ({
       title={`${brand.name} - ${brand.tier}`}
     >
       <div className="h-10 sm:h-11 w-24 sm:w-28 bg-white rounded-lg px-2 py-1 flex items-center justify-center shrink-0 shadow-sm border border-slate-200">
-        <img
+        <SafeBrandImg
           src={brand.logoUrl}
           alt={brand.name}
-          referrerPolicy="no-referrer"
-          loading="lazy"
-          className="h-full w-full max-h-9 object-contain transform scale-105"
-          onError={(e) => {
-            (e.target as HTMLElement).style.display = 'none';
-          }}
+          name={brand.name}
+          brandColor={brand.brandColor}
+          maxHeightClass="max-h-9"
         />
       </div>
       <div className="flex flex-col min-w-0">
@@ -868,15 +908,12 @@ export const BrandMarqueeRow: React.FC<{ category?: string }> = ({ category }) =
           className="p-3.5 rounded-xl bg-[#111726]/90 border border-slate-800 hover:border-slate-700 hover:bg-[#151c2e] transition-all flex items-center gap-3.5 shadow-sm"
         >
           <div className="h-12 w-28 sm:w-32 bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-slate-200">
-            <img
+            <SafeBrandImg
               src={b.logoUrl}
               alt={b.name}
-              referrerPolicy="no-referrer"
-              loading="lazy"
-              className="h-full w-full max-h-9 sm:max-h-10 object-contain transform scale-105"
-              onError={(e) => {
-                (e.target as HTMLElement).style.display = 'none';
-              }}
+              name={b.name}
+              brandColor={b.brandColor}
+              maxHeightClass="max-h-9 sm:max-h-10"
             />
           </div>
           <div className="flex flex-col text-left">
@@ -910,6 +947,10 @@ export const BrandGridShowcase: React.FC = () => {
     'chint',
     'osaka',
     'phoenix',
+    'inverex',
+    'soluna',
+    'narada',
+    'knox',
     'pakcables',
     'fastcables',
   ];
@@ -926,15 +967,12 @@ export const BrandGridShowcase: React.FC = () => {
             title={`${brand.name} · ${brand.tier}`}
           >
             <div className="h-24 sm:h-26 w-full bg-white rounded-xl p-2.5 flex items-center justify-center shadow-inner border border-slate-200/60 overflow-hidden">
-              <img
+              <SafeBrandImg
                 src={brand.logoUrl}
                 alt={brand.name}
-                referrerPolicy="no-referrer"
-                loading="lazy"
-                className="h-full w-full max-h-20 object-contain transform scale-105 group-hover:scale-110 transition-transform duration-300"
-                onError={(e) => {
-                  (e.target as HTMLElement).style.display = 'none';
-                }}
+                name={brand.name}
+                brandColor={brand.brandColor}
+                maxHeightClass="max-h-20"
               />
             </div>
             <span className="text-xs font-bold text-slate-200 mt-2 truncate max-w-full px-1">
@@ -1006,15 +1044,12 @@ export const BatteryBrandsShowcase: React.FC = () => {
               title={`${brand.name} · ${brand.tier}`}
             >
               <div className="h-20 sm:h-22 w-full bg-white rounded-xl p-2.5 flex items-center justify-center shadow-inner border border-slate-200/60 overflow-hidden">
-                <img
+                <SafeBrandImg
                   src={brand.logoUrl}
                   alt={brand.name}
-                  referrerPolicy="no-referrer"
-                  loading="lazy"
-                  className="h-full w-full max-h-16 object-contain transform scale-105 group-hover:scale-110 transition-transform duration-300"
-                  onError={(e) => {
-                    (e.target as HTMLElement).style.display = 'none';
-                  }}
+                  name={brand.name}
+                  brandColor={brand.brandColor}
+                  maxHeightClass="max-h-16"
                 />
               </div>
               <div className="mt-2 w-full">

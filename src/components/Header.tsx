@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import { HashimLogo } from './HashimLogo';
-import { Menu, X, Phone, FileUp, ChevronRight, Home, Zap, Tractor, Cpu, Wrench, FolderGit2, Calculator, Mail } from 'lucide-react';
+import { Menu, X, Phone, FileUp, ChevronRight, Home, Zap, Tractor, Cpu, Wrench, FolderGit2, Calculator, Mail, Sparkles, Mic, MessageSquare } from 'lucide-react';
 
 interface HeaderProps {
   currentPath: string;
   onNavigate: (path: string) => void;
   onOpenQuoteModal: (type?: string) => void;
+  onOpenAiAssistant?: (mode?: 'chat' | 'voice') => void;
+  isVoiceActivationEnabled?: boolean;
+  onToggleVoiceActivation?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onOpenQuoteModal }) => {
+export const Header: React.FC<HeaderProps> = ({ 
+  currentPath, 
+  onNavigate, 
+  onOpenQuoteModal, 
+  onOpenAiAssistant,
+  isVoiceActivationEnabled = false,
+  onToggleVoiceActivation,
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -64,7 +74,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onOpenQ
           </nav>
 
           {/* Primary Action Controls */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2.5">
             <a
               href="https://wa.me/923344319157?text=Assalam-o-Alaikum%20Hashim%20Engineering%20team,%20I%20would%20like%20to%20inquire%20about%20a%20solar%20system."
               target="_blank"
@@ -84,11 +94,19 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onOpenQ
             </button>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle & Mobile AI Button */}
           <div className="flex xl:hidden items-center gap-2">
             <button
+              onClick={() => onOpenAiAssistant && onOpenAiAssistant('voice')}
+              className="px-2 py-1 text-xs font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 border border-cyan-400/40 rounded-md flex items-center gap-1 shadow-sm"
+              title="Start Voice Call"
+            >
+              <Mic className="w-3 h-3 text-cyan-300" />
+              <span>AI Voice</span>
+            </button>
+            <button
               onClick={() => onOpenQuoteModal()}
-              className="sm:hidden px-3 py-1.5 text-xs font-semibold text-white bg-[#c51e28] rounded-md"
+              className="sm:hidden px-2.5 py-1.5 text-xs font-semibold text-white bg-[#c51e28] rounded-md"
             >
               Quote
             </button>
@@ -150,6 +168,28 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onOpenQ
             })}
 
             <div className="pt-4 flex flex-col gap-3">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  if (onOpenAiAssistant) onOpenAiAssistant('voice');
+                }}
+                className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-600 border border-cyan-400/40 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg"
+              >
+                <Mic className="w-3.5 h-3.5 text-cyan-200 animate-pulse" />
+                <span>Start AI Voice Consultation</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  if (onOpenAiAssistant) onOpenAiAssistant('chat');
+                }}
+                className="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-indigo-900/60 text-slate-200 font-semibold text-xs flex items-center justify-center gap-2"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
+                <span>Chat with Gemini Solar Advisor</span>
+              </button>
+
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);

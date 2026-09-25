@@ -97,7 +97,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onInquireProdu
         '10-Year design life with zero water topping or maintenance'
       ],
       brandHeader: 'Top Lithium & Tubular Battery Partners',
-      brandIds: ['byd', 'pylontech', 'dyness', 'hithium', 'huawei', 'deye', 'osaka', 'phoenix', 'exide'],
+      brandIds: ['byd', 'pylontech', 'dyness', 'hithium', 'foxess', 'soluna', 'narada', 'inverex', 'solarmax', 'knox', 'huawei', 'deye', 'osaka', 'phoenix', 'exide'],
       details: [
         { label: 'Voltage Options', val: '48V Low Voltage / High Voltage' },
         { label: 'Depth of Discharge', val: '90% – 95% DoD' },

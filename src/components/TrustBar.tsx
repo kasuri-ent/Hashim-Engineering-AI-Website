@@ -1,6 +1,5 @@
 import React from 'react';
-import { Cpu, ShieldCheck, Wrench, Layers, Award } from 'lucide-react';
-import { BrandGridShowcase } from './BrandLogos';
+import { Cpu, ShieldCheck, Wrench, Layers } from 'lucide-react';
 
 export const TrustBar: React.FC = () => {
   const pillars = [
@@ -43,7 +42,7 @@ export const TrustBar: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
@@ -66,15 +65,6 @@ export const TrustBar: React.FC = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Global Brand Trust Bar */}
-        <div className="pt-6 border-t border-slate-800/60">
-          <div className="flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">
-            <Award className="w-4 h-4 text-[#c51e28]" />
-            <span>Authorized Global Solar Brand Partnerships</span>
-          </div>
-          <BrandGridShowcase />
         </div>
       </div>
     </section>

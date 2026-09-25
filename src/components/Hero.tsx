@@ -4,9 +4,10 @@ import residentialSolarHero from '../assets/images/residential_solar_hero_179016
 
 interface HeroProps {
   onOpenQuoteModal: (type?: string) => void;
+  onOpenAiAssistant?: (mode?: 'chat' | 'voice') => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal, onOpenAiAssistant }) => {
   return (
     <section className="relative overflow-hidden bg-[#0b0f17] pt-8 pb-16 lg:pt-14 lg:pb-24 border-b border-slate-800/80">
       {/* Background Ambient Radial Glow */}

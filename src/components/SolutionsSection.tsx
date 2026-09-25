@@ -11,6 +11,7 @@ import agriImg from '../assets/images/agriculture_solar_tubewell_1790159399906.j
 import onGridImg from '../assets/images/ongrid_solar_systems_1790164256316.jpg';
 import hybridImg from '../assets/images/solar_inverter_setup_1790160978723.jpg';
 import offGridImg from '../assets/images/solar_storage_protection_1790159434922.jpg';
+import solarPumpingImg from '../assets/images/solar_water_pumping_1790283108699.jpg';
 
 interface SolutionsSectionProps {
   onSelectSolution: (solutionName: string) => void;
@@ -115,7 +116,7 @@ export const SolutionsSection: React.FC<SolutionsSectionProps> = ({ onSelectSolu
       id: 'pumping',
       category: 'system',
       icon: Droplet,
-      image: agriImg,
+      image: solarPumpingImg,
       title: 'Solar Water Pumping',
       capacity: '3 HP to 40 HP Pumps',
       tagline: 'Dedicated solar drives for water extraction',

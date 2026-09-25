@@ -17,9 +17,10 @@ import { updatePageSeo } from '../utils/seo';
 interface HomePageProps {
   onOpenQuoteModal: (type?: string) => void;
   onNavigate: (path: string) => void;
+  onOpenAiAssistant?: (mode?: 'chat' | 'voice') => void;
 }
 
-export const HomePage: React.FC<HomePageProps> = ({ onOpenQuoteModal, onNavigate }) => {
+export const HomePage: React.FC<HomePageProps> = ({ onOpenQuoteModal, onNavigate, onOpenAiAssistant }) => {
   useEffect(() => {
     updatePageSeo({
       title: 'Solar Company in Pakistan | Solar Installation | Hashim Engineering',
@@ -34,7 +35,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenQuoteModal, onNavigate
   return (
     <>
       {/* 1. Hero Section */}
-      <Hero onOpenQuoteModal={onOpenQuoteModal} />
+      <Hero onOpenQuoteModal={onOpenQuoteModal} onOpenAiAssistant={onOpenAiAssistant} />
 
       {/* 2. Homepage Trust Bar */}
       <TrustBar />

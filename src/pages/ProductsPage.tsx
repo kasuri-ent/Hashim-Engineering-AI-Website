@@ -4,7 +4,7 @@ import {
   ArrowRight, Phone, Download, CheckCircle2, Star, Award
 } from 'lucide-react';
 import { updatePageSeo } from '../utils/seo';
-import { SOLAR_BRANDS, BrandBadge, BatteryBrandsShowcase, SolarBrandId } from '../components/BrandLogos';
+import { SOLAR_BRANDS, BrandBadge, BatteryBrandsShowcase, SolarBrandId, SafeBrandImg } from '../components/BrandLogos';
 
 import panelsImg from '../assets/images/solar_panels_topcon_1790160964091.jpg';
 import inverterImg from '../assets/images/solar_inverter_setup_1790160978723.jpg';
@@ -178,6 +178,50 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ onOpenQuoteModal, on
     },
     {
       category: 'batteries',
+      brandId: 'inverex' as SolarBrandId,
+      name: 'Inverex PowerWall LiFePO4',
+      type: 'Wall-Mount Smart Lithium Storage System',
+      powerRange: '5.12 kWh / 10.24 kWh (48V / 100Ah-200Ah)',
+      efficiency: '95% Round-Trip DoD Efficiency',
+      warranty: '5-Yr to 10-Yr Official Warranty',
+      image: batteryImg,
+      highlights: ['Ultra-slim wall-mounted design', 'High-speed CAN/RS485 protocol matching Inverex, Deye & GoodWe', 'Built-in intelligent BMS with LCD display', 'Over 6,000 deep discharge cycles'],
+    },
+    {
+      category: 'batteries',
+      brandId: 'soluna' as SolarBrandId,
+      name: 'Soluna HV & LV Lithium Energy Bank',
+      type: 'Modular High & Low Voltage LiFePO4 Storage',
+      powerRange: '5 kWh to 60 kWh Commercial & Domestic',
+      efficiency: '96% High-Voltage Efficiency',
+      warranty: '10-Yr Manufacturer Warranty',
+      image: batteryImg,
+      highlights: ['Certified German engineering standard', 'Parallel scaling up to 10 units', 'Smart pre-charge circuit & thermal safety sensors', 'Zero maintenance requirement'],
+    },
+    {
+      category: 'batteries',
+      brandId: 'narada' as SolarBrandId,
+      name: 'Narada Telecom & Solar LFP Rack Battery',
+      type: 'Telecom Grade LiFePO4 Lithium Iron Phosphate',
+      powerRange: '48V 100Ah (4.8 kWh) / 200Ah Rack Modules',
+      efficiency: '95% DoD Long-Life Cycles',
+      warranty: '5-Yr / 10-Yr Design Life Warranty',
+      image: batteryImg,
+      highlights: ['Heavy industrial and telecom benchmark reliability', 'Built for high ambient temperature resilience', 'Integrated multi-tier BMS auto balancing', 'Compatible with all major hybrid inverters'],
+    },
+    {
+      category: 'batteries',
+      brandId: 'knox' as SolarBrandId,
+      name: 'Knox LiFePO4 Smart Battery Rack',
+      type: 'High-Density Lithium Energy Storage Module',
+      powerRange: '5.12 kWh / 10.24 kWh Modules',
+      efficiency: '94% Round-Trip DoD Efficiency',
+      warranty: '5-Yr Official Warranty',
+      image: batteryImg,
+      highlights: ['A-Grade prismatic lithium cells', 'Seamless plug-and-play RS485/CAN pairing', 'Compact rack or floor standing enclosure', 'Designed for Pakistan grid conditions'],
+    },
+    {
+      category: 'batteries',
       brandId: 'osaka' as SolarBrandId,
       name: 'Osaka Solar Tubular Deep-Cycle Batteries',
       type: 'Tall Tubular Heavy-Duty Lead-Acid Storage',
@@ -344,15 +388,12 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ onOpenQuoteModal, on
                     {/* Authentic Brand Logo Badge */}
                     <div className="absolute top-3 left-3 h-12 w-32 sm:w-36 px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-md border border-slate-300 shadow-xl flex items-center justify-center">
                       {brand ? (
-                        <img
+                        <SafeBrandImg
                           src={brand.logoUrl}
                           alt={brand.name}
-                          referrerPolicy="no-referrer"
-                          loading="lazy"
-                          className="h-full w-full max-h-9 object-contain transform scale-105"
-                          onError={(e) => {
-                            (e.target as HTMLElement).style.display = 'none';
-                          }}
+                          name={brand.name}
+                          brandColor={brand.brandColor}
+                          maxHeightClass="max-h-9"
                         />
                       ) : (
                         <span className="text-slate-900 font-bold text-xs">{item.name}</span>

@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { BillUploadModal } from './components/BillUploadModal';
+import { GeminiSolarAssistant } from './components/GeminiSolarAssistant';
 
 import { HomePage } from './pages/HomePage';
 import { SolutionsPage } from './pages/SolutionsPage';
@@ -17,7 +18,7 @@ import { ProjectsPage } from './pages/ProjectsPage';
 import { CalculatorPage } from './pages/CalculatorPage';
 import { ContactPage } from './pages/ContactPage';
 
-import { Phone, ArrowUp, Zap } from 'lucide-react';
+import { Phone, ArrowUp, Zap, Sparkles } from 'lucide-react';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
@@ -30,6 +31,35 @@ export default function App() {
 
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [modalTopic, setModalTopic] = useState('Residential Solar');
+
+  const [isAiAssistantOpen, setIsAiAssistantOpen] = useState(false);
+  const [aiAssistantMode, setAiAssistantMode] = useState<'chat' | 'voice'>('chat');
+  const [isVoiceActivationEnabled, setIsVoiceActivationEnabled] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        return localStorage.getItem('hashim_ai_voice_activation') === 'true';
+      } catch {
+        return false;
+      }
+    }
+    return false;
+  });
+
+  const handleToggleVoiceActivation = (enabled?: boolean) => {
+    setIsVoiceActivationEnabled((prev) => {
+      const next = typeof enabled === 'boolean' ? enabled : !prev;
+      try {
+        localStorage.setItem('hashim_ai_voice_activation', String(next));
+      } catch {}
+      return next;
+    });
+  };
+
+  const handleOpenAiAssistant = (mode?: 'chat' | 'voice') => {
+    const targetMode = mode || (isVoiceActivationEnabled ? 'voice' : 'chat');
+    setAiAssistantMode(targetMode);
+    setIsAiAssistantOpen(true);
+  };
 
   useEffect(() => {
     const handlePopState = () => {
@@ -84,18 +114,21 @@ export default function App() {
         return <ContactPage onOpenQuoteModal={handleOpenQuoteModal} onNavigate={navigate} />;
       case '/':
       default:
-        return <HomePage onOpenQuoteModal={handleOpenQuoteModal} onNavigate={navigate} />;
+        return <HomePage onOpenQuoteModal={handleOpenQuoteModal} onNavigate={navigate} onOpenAiAssistant={handleOpenAiAssistant} />;
     }
   };
 
   return (
     <div className="min-h-screen bg-[#0b0f17] text-slate-100 flex flex-col font-sans selection:bg-[#c51e28] selection:text-white relative">
       
-      {/* 1. Header with Active Navigation State */}
+      {/* 1. Header with Active Navigation State & AI Assistant Launcher */}
       <Header 
         currentPath={currentPath}
         onNavigate={navigate}
-        onOpenQuoteModal={handleOpenQuoteModal} 
+        onOpenQuoteModal={handleOpenQuoteModal}
+        onOpenAiAssistant={handleOpenAiAssistant}
+        isVoiceActivationEnabled={isVoiceActivationEnabled}
+        onToggleVoiceActivation={handleToggleVoiceActivation}
       />
 
       {/* 2. Active Page Content */}
@@ -107,6 +140,7 @@ export default function App() {
       <Footer 
         onOpenQuoteModal={handleOpenQuoteModal}
         onNavigate={navigate}
+        onOpenAiAssistant={handleOpenAiAssistant}
       />
 
       {/* 4. Instant Solar Quote Modal */}
@@ -116,30 +150,56 @@ export default function App() {
         initialType={modalTopic}
       />
 
-      {/* 5. Persistent Floating WhatsApp Helpline Button */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 pointer-events-auto">
+      {/* 5. Prominent Gemini AI Solar Chatbot & Live Voice Conversations (Visible Everywhere) */}
+      <GeminiSolarAssistant
+        isOpen={isAiAssistantOpen}
+        onClose={() => setIsAiAssistantOpen(false)}
+        initialMode={aiAssistantMode}
+        isVoiceActivationEnabled={isVoiceActivationEnabled}
+        onToggleVoiceActivation={handleToggleVoiceActivation}
+      />
+
+      {/* 6. Persistent Floating WhatsApp & Utility Stack */}
+      <div className="fixed bottom-24 sm:bottom-6 left-auto right-4 sm:right-6 z-40 flex flex-col items-end gap-2.5 pointer-events-auto">
+        {/* Floating AI Assistant Trigger */}
+        <button
+          onClick={() => handleOpenAiAssistant()}
+          className="group flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 text-white text-[11px] font-bold rounded-full shadow-xl border border-cyan-400/40 transition-all transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-cyan-500/30 backdrop-blur-md"
+          title="Open Solar AI Advisor"
+          aria-label="Solar AI Advisor"
+        >
+          <div className="relative flex items-center justify-center">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-200 animate-pulse" />
+            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-cyan-300 rounded-full animate-ping" />
+          </div>
+          <span className="font-semibold tracking-wide">Solar AI</span>
+          <span className="hidden sm:inline text-[9px] px-1.5 py-0.5 rounded-full bg-black/30 text-cyan-200 border border-cyan-300/30 font-mono">
+            3.8
+          </span>
+        </button>
+
         <a
           href="https://wa.me/923344319157?text=Assalam-o-Alaikum%20Hashim%20Engineering%20team,%20I%20would%20like%20to%20consult%20regarding%20a%20solar%20system."
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-2.5 px-4 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-full shadow-2xl transition-all transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-emerald-500/40"
+          className="group flex items-center gap-2 px-3.5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-full shadow-xl transition-all transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-emerald-500/40"
           aria-label="Chat on WhatsApp with Hashim Engineering (+92 334 4319157)"
         >
           <div className="relative">
-            <Phone className="w-4 h-4 fill-current animate-pulse" />
-            <span className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-300 rounded-full animate-ping" />
+            <Phone className="w-3.5 h-3.5 fill-current" />
+            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-emerald-300 rounded-full animate-ping" />
           </div>
-          <span className="hidden sm:inline font-mono">WhatsApp Solar Engineer</span>
+          <span className="hidden md:inline font-mono">WhatsApp Helpline</span>
         </a>
 
         {/* Scroll To Top */}
         <button
           onClick={scrollToTop}
-          className="p-2.5 rounded-full bg-slate-900/80 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-700/80 backdrop-blur-md transition-all shadow-md"
+          className="p-2 rounded-full bg-slate-900/80 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-700/80 backdrop-blur-md transition-all shadow-md"
           title="Scroll back to top"
           aria-label="Scroll to top"
         >
-          <ArrowUp className="w-4 h-4" />
+          <ArrowUp className="w-3.5 h-3.5" />
         </button>
       </div>
 

@@ -5,9 +5,10 @@ import { Phone, Mail, MapPin, ArrowRight, ShieldCheck, Heart } from 'lucide-reac
 interface FooterProps {
   onOpenQuoteModal: (topic?: string) => void;
   onNavigate?: (path: string) => void;
+  onOpenAiAssistant?: (mode?: 'chat' | 'voice') => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal, onNavigate }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal, onNavigate, onOpenAiAssistant }) => {
   const handleNav = (e: React.MouseEvent, path: string) => {
     if (onNavigate) {
       e.preventDefault();
@@ -124,6 +125,24 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal, onNavigate }) 
               Company &amp; Engineering
             </h4>
             <ul className="space-y-2.5 text-xs">
+              <li>
+                <button
+                  onClick={() => onOpenAiAssistant && onOpenAiAssistant('chat')}
+                  className="hover:text-white text-rose-400 font-semibold flex items-center gap-1.5 transition-colors"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse" />
+                  <span>Gemini Solar AI Chatbot</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onOpenAiAssistant && onOpenAiAssistant('voice')}
+                  className="hover:text-white text-emerald-400 font-semibold flex items-center gap-1.5 transition-colors"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                  <span>Live Voice Conversations (3.8-Live)</span>
+                </button>
+              </li>
               <li><a href="/" onClick={(e) => handleNav(e, '/')} className="hover:text-white transition-colors">About Hashim Engineering</a></li>
               <li><a href="/services" onClick={(e) => handleNav(e, '/services')} className="hover:text-white transition-colors">Engineering &amp; EPC Services</a></li>
               <li><a href="/calculator" onClick={(e) => handleNav(e, '/calculator')} className="hover:text-white transition-colors text-emerald-400 font-semibold">Solar Sizing Calculator</a></li>
